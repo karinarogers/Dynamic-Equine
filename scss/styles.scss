@@ -82,6 +82,7 @@ h3 {
 p {
     font-size: 0.95em;
     @include montserrat400();
+    line-height: 1.5rem;
 
     @include desktop {
         font-size: 1.1em;
@@ -103,16 +104,12 @@ footer {
     overflow: auto;
 }
 
-.logo {
-    max-width: 85vw;
-
-    @include desktop {
-        max-width: 500px;
-    }
-}
-
 header {
     background-color: $dark;
+
+    a:hover {
+        text-decoration: overline;
+    }
 
     #nav {
         @include montserrat400;
@@ -140,15 +137,23 @@ header {
     }
 }
 
-.logo-wrapper {
-    display: flex;
-    justify-content: center;
+.logo {
+    max-width: 85vw;
 
-    img {
-        margin: 30px;
+    @include desktop {
+        max-width: 500px;
+    }
 
-        footer & {
-            max-width: 200px;
+    &-wrapper {
+        display: flex;
+        justify-content: center;
+
+        img {
+            margin: 30px;
+
+            footer & {
+                max-width: 200px;
+            }
         }
     }
 }
@@ -212,6 +217,12 @@ header {
     background-size: cover;
     padding-bottom: 70px;
 
+    h2 {
+        @media (min-width: 1600px) {
+            color: white;
+        }
+    }
+
     h3 {
         text-transform: uppercase;
         letter-spacing: .5rem;
@@ -241,17 +252,6 @@ header {
 
         @include desktop {
             width: 40%;
-
-            //     :nth-child(1),
-            //     :nth-child(3) {
-            //         flex: 1 1 50%;
-            //     }
-
-            //     :nth-child(2),
-            //     :nth-child(4) {
-            //         flex: 1 1 50%;
-            //     }
-            // }
         }
     }
 }
@@ -278,6 +278,4 @@ header {
 
 footer {
     background-color: $primary;
-
-
 }
